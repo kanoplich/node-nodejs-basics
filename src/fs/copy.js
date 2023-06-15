@@ -20,7 +20,7 @@ const copy = async () => {
       await copyFile(pathFrom, pathTo);
     }
   } catch {
-    throw new Error('FS operation failed')
+    throw new Error('FS operation failed');
   }
 
 };
