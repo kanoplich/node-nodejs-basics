@@ -1,4 +1,4 @@
-import { access, writeFile } from 'fs';
+import { access, writeFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 const create = async () => {
   const filePath = join(__dirname, 'files', 'fresh.txt');
 
-  access(filePath, (err) => {
+  await access(filePath, (err) => {
     if(err) {
       writeFile(filePath, 'I am fresh and young', (error) => {
         if(error) throw error;
