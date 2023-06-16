@@ -10,7 +10,6 @@ const list = async () => {
 
   try {
     const files = await readdir(filePath);
-
     const list = files.map((file) => file);
     console.log(list);
   } catch {
