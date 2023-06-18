@@ -10,8 +10,7 @@ const list = async () => {
 
   try {
     const files = await readdir(filePath);
-    const list = files.map((file) => file);
-    console.log(list);
+    console.log(files);
   } catch {
     throw new Error('FS operation failed');
   }

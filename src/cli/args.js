@@ -4,9 +4,10 @@ const parseArgs = () => {
   const array = [];
 
   for(let i = 0; i < argv.length; i++) {
-    if(argv[i].includes('--')) {
+    const value = argv[i + 1];
+    if(value && argv[i].includes('--')) {
       const elem = argv[i].slice(2);
-      array.push(`${elem} is ${argv[i + 1]}`);
+      array.push(`${elem} is ${value}`);
     }
   }
   console.log(array.join(', '));

@@ -6,16 +6,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const copy = async () => {
-  const filePathFiles = join(__dirname, 'files');
-  const filePathFiles_copy = join(__dirname, 'files_copy');
+  const filePath = join(__dirname, 'files');
+  const dirPath = join(__dirname, 'files_copy');
 
   try {
-    await mkdir(filePathFiles_copy);
-    const files = await readdir(filePathFiles);
+    await mkdir(dirPath);
+    const files = await readdir(filePath);
 
     for(const file of files) {
-      const pathFrom = join(filePathFiles, file);
-      const pathTo = join(filePathFiles_copy, file);
+      const pathFrom = join(filePath, file);
+      const pathTo = join(dirPath, file);
 
       await copyFile(pathFrom, pathTo);
     }
