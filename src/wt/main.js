@@ -13,7 +13,7 @@ const performCalculations = async () => {
   const promises = await Promise.allSettled(cpu.map((item, i) => {
     return new Promise((res, rej) => {
       const worker = new Worker(filePath, { workerData: i + 10 });
-      worker.on('message', (res));
+      worker.on('message', res);
       worker.on('error', rej);
     });
   }));

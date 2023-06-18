@@ -10,8 +10,8 @@ const copy = async () => {
   const dirPath = join(__dirname, 'files_copy');
 
   try {
-    await mkdir(dirPath);
     const files = await readdir(filePath);
+    await mkdir(dirPath);
 
     for(const file of files) {
       const pathFrom = join(filePath, file);
